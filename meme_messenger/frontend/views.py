@@ -32,10 +32,9 @@ def unsubscribe(request):
         area = request.POST.__getitem__('area')
         number = request.POST.__getitem__('phone_number')
         if form.is_valid2(country, area, number):
-            return render(request, 'frontend/unsub_success.html')
+            return render(request, 'frontend/unsub_success.html',)
         else:
-            return render(request, 'frontend/index.html')
-        return render(request, 'frontend/unsubscribe.html')
+            return render(request, 'frontend/unsubscribe.html', {'error': 'Phone number is not registered', 'form': form})
     else:
         form = PhoneNumberForm()
         return render(request, 'frontend/unsubscribe.html', {'form': form})

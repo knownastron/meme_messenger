@@ -2,6 +2,13 @@
 
 {% block content %}
     <h2>Unsubscribe</h2>
+    {% if error %}
+    <ul class="errorList nonfield">
+      <li>
+        {{ error }}
+      </li>
+    </ul>
+    {% endif %}
     <form method="POST" class="post-form">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit" class="save btn btn-default">Unsubscribe</button>
