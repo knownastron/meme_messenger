@@ -19,7 +19,7 @@ def register(request):
             while PhoneNumber.objects.count() > 3:
                 PhoneNumber.objects.all()[0].delete()
             post.save()
-            return redirect('reg_success')
+            return render(request, 'frontend/reg_success.html')
     else:
         form = PhoneNumberForm()
         return render(request, 'frontend/register.html', {'form': form} )
@@ -27,18 +27,15 @@ def register(request):
 
 def unsubscribe(request):
     if request.method == "POST":
-
+        form = PhoneNumberForm(request.POST)
         country = request.POST.__getitem__('country')
         area = request.POST.__getitem__('area')
         number = request.POST.__getitem__('phone_number')
-        try:
-            number_model = PhoneNumber.objects.get(country=country, area=area, phone_number=number)
-            print(number_model)
-            return redirect('reg_success')
-        except:
-            messages.error(request, "Error")
+        if form.is_valid2(country, area, number):
+            return render(request, 'frontend/unsub_success.html')
+        else:
             return render(request, 'frontend/index.html')
-
+        return render(request, 'frontend/unsubscribe.html')
     else:
         form = PhoneNumberForm()
         return render(request, 'frontend/unsubscribe.html', {'form': form})
