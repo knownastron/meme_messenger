@@ -31,24 +31,6 @@ class PhoneNumberForm(forms.ModelForm):
             raise forms.ValidationError("Phone number must be 7 digits.")
         return data
 
-    # def is_valid(self):
-    #     valid = super(PhoneNumberForm, self).is_valid()
-    #     if not valid:
-    #         return False
-    #
-    #
-    #     data = self.cleaned_data
-    #     if re.search('[a-zA-Z]', data['country']):
-    #         raise forms.ValidationError("Input must be digits.")
-    #         return False
-    #     if re.search('[a-zA-Z]', data['area']):
-    #         raise forms.ValidationError("Input must be digits.")
-    #         return False
-    #     if re.search('[a-zA-Z]', data['phone_number']):
-    #         raise forms.ValidationError("Input must be digits.")
-    #         return False
-    #     return True
-
     def is_valid2(self, country, area, phone_number):
         """
         Returns true if the country, area, and phone_number are in the database.
