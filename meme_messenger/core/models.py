@@ -18,6 +18,8 @@ class PhoneNumber(models.Model):
     def __str__(self):
         return str(self.country) + str(self.area) + str(self.phone_number)
 
+    def to_string(self):
+        return str(self.country) + str(self.area) + str(self.phone_number)
 # class imageURLs(models.Model):
 #     url = models.CharField(unique=True)
 #

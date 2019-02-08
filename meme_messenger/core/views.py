@@ -4,21 +4,25 @@ from .forms import PhoneNumberForm
 from django.utils import timezone
 from django.core import validators
 from django.contrib import messages
+from core.utils.twilio import twilioObject
 # Create your views here.
 
 def index(request):
     return render(request, 'core/index.html')
 
 def register(request):
+
     if request.method == "POST":
         form = PhoneNumberForm(request.POST)
         if form.is_valid():
             number = form.save(commit=False)
             number.reg_date = timezone.now()
-            # deletes oldest number past 3
-            while PhoneNumber.objects.count() > 3:
+
+            while PhoneNumber.objects.count() > 5: # deletes oldest number past 5
                 PhoneNumber.objects.all()[0].delete()
             number.save()
+            #twilioObject().send_confirmation(number.to_string())
+
             return render(request, 'core/reg_success.html')
 
     else:
