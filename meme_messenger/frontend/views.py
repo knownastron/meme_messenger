@@ -13,13 +13,14 @@ def register(request):
     if request.method == "POST":
         form = PhoneNumberForm(request.POST)
         if form.is_valid():
-            post = form.save(commit=False)
-            post.reg_date = timezone.now()
+            number = form.save(commit=False)
+            number.reg_date = timezone.now()
             # deletes oldest number past 3
             while PhoneNumber.objects.count() > 3:
                 PhoneNumber.objects.all()[0].delete()
-            post.save()
+            number.save()
             return render(request, 'frontend/reg_success.html')
+
     else:
         form = PhoneNumberForm()
         return render(request, 'frontend/register.html', {'form': form} )
