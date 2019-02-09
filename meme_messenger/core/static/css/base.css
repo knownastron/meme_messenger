@@ -1,12 +1,17 @@
+body {
+  background-color: #f9f9f9
+}
+
 .page-header {
     background-color: #C25100;
     margin-top: 0;
     padding: 20px 20px 20px 40px;
 }
 
+
 .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
     color: #ffffff;
-    font-size: 36pt;
+    font-size: 80px;
     text-decoration: none;
 }
 
@@ -20,4 +25,38 @@ h1, h2, h3, h4 {
 
 .post-form textarea, .post-form input {
     width: 100%;
+}
+
+#idx-p {
+  margin-top: 5%;
+  width: 80%;
+  font-size: 20px;
+  margin-bottom: 5%;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* width: 300px;
+  height: 300px; */
+  margin-top: 20%;
+}
+
+.reg-btn{
+
+}
+
+.unsub-btn {
+  background-color: #ffffff !important;;
+}
+
+/* .reg-unsub-row {
+  background-color: red;
+  height: 40%;
+} */
+.reg-col, .unsub-col {
+  width: 40%;
+  margin-right: 20%;
+  margin-left: 30%;
 }

@@ -2,22 +2,19 @@
 <html>
     <head>
         <title>Meme Messenger</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap-theme.min.css">
         <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
-        <div class="page-header">
-            <h1><a href="/">Meme Messenger</a></h1>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    {% block content %}
-                    {% endblock %}
-                </div>
-            </div>
-        </div>
+    <div class="jumbotron text-center page-header">
+        <h1><a href="/">Meme Messenger</a></h1>
+        <p>Programming memes straight to your phone every day!</p>
+    </div>
+
+      {% block content %}
+      {% endblock %}
+
     </body>
 </html>

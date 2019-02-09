@@ -1,5 +1,7 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block content %}
-    <h2>REGISTRATION SUCCESSFUL</h2>
+    <img src={% static 'media/success.jpg' %}>
+    <p align="center"> You will receive a confirmation text message shortly </p>
 {% endblock %}

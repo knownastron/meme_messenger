@@ -3,7 +3,33 @@
 
 
 {% block content %}
-    <p> Sign up your phone number to get programming memes sent to your number every day!</p>
-    <a class="btn btn-primary btn-lg" href="/register">Register Now!</a>
-    <a class="btn btn-primary btn-lg" href="/unsubscribe">Unsubscribe</a>
+<div class="container">
+  <div class="row">
+    <div class="col" align="center">
+      <p id="idx-p"> Have you always dreamed of gettting programming memes sent to your
+      phone each and <strong>everyday</strong>? Dream no more, with Meme Messenger you will
+      be sent memes to you everyday at noon (MST)!
+      </p>
+    </div>
+  </div>
+
+  <div class="row reg-unsub-row">
+    <div class="col" align="center">
+      <a class="btn btn-success btn-lg" href="/register">Register Now!</a>
+      <a class="btn btn-danger btn-lg" href="/unsubscribe">Unsubscribe</a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <img src={% static 'media/index_meme2.jpg' %} width="282px" height="233px">
+    </div>
+    <div class="col-sm-4">
+      <img src={% static 'media/index_meme1.jpg' %} width="352px" height="233px">
+    </div>
+    <div class="col-sm-4">
+      <img src={% static 'media/index_meme3.jpg' %} width="233px" height="233px">
+    </div>
+  </div>
+</div>
 {% endblock %}

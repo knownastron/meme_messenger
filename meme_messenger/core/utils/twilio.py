@@ -37,7 +37,7 @@ class twilioObject(object):
         message = client.messages.create(
             to= plus_prepended_to_num,
             from_="+17175029477",
-            body="You are registered to Meme Messenger! You will receive memes everyday at noon (MST)!"
+            body="You are registered to Meme Messenger!"
 
         )
         print(message.sid)

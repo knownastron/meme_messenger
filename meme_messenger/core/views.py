@@ -18,10 +18,10 @@ def register(request):
             number = form.save(commit=False)
             number.reg_date = timezone.now()
 
-            while PhoneNumber.objects.count() > 5: # deletes oldest number past 5
+            while PhoneNumber.objects.count() > 4: # deletes oldest number past 5
                 PhoneNumber.objects.all()[0].delete()
             number.save()
-            #twilioObject().send_confirmation(number.to_string())
+            twilioObject().send_confirmation(number.to_string())
 
             return render(request, 'core/reg_success.html')
 
@@ -47,3 +47,6 @@ def unsubscribe(request):
 
 def reg_success(request):
     return render(request, 'core/reg_success.html')
+
+def unsub_success(request):
+    return render(request, 'core/unsub_success.html')

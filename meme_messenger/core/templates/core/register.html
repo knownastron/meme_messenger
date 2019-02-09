@@ -1,9 +1,16 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h2>Enter Phone Number</h2>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+<div class="row">
+  <div class="col">
+    <div class="col reg-col">
+      <h2>Enter Phone Number</h2>
+      <form method="POST" class="post-form phone-form">{% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit" class="save btn btn-default">Save</button>
+      </form>
+      <p> *currently only supporting US and Canada phone numbers </p>
+    </div">
+  </div>
+</div>
 {% endblock %}
