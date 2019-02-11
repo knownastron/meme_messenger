@@ -34,12 +34,13 @@ h1, h2, h3, h4 {
   margin-bottom: 5%;
 }
 
-img {
+.success-img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  /* width: 300px;
-  height: 300px; */
+}
+
+.exp-img {
   margin-top: 20%;
 }
 
