@@ -2,12 +2,12 @@
 Sign up your number to get programming memes sent to you daily:
 www.knownastron.pythonanywhere.com
 
-#Languages:
+## Languages:
 - Python 3.7
 - HTML
 - CSS
 
-#Technologies:
+## Technologies:
 - Django
 - SQLite
 - Bootstrap
